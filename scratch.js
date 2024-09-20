@@ -103,7 +103,7 @@ const particleSpray = (x,y) => {
     elem.style.height = size;
     elem.style.borderRadius = size;
     elem.style.animation = "fallingsparkles 1s";
-    elem.style.background = 'hsla(' + Math.round(Math.random() * 160) + ', 60%, 90%, 0.5)';
+    elem.style.background = `hsla(250, 100%, ${Math.round(Math.random()*100)}%, 0.5)`;
     elem.style.pointerEvents = 'none';
     document.body.appendChild(elem);
     
