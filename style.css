@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#ticket {
+    cursor: url(coin.webp) 32 32, auto;
+    background-image: url(scratched.jpg);
+    height: 420px;
+    width: 280px;
+    transition: 0.25s;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+}
+
+#ticket:hover {
+    scale: 1.25;
+}
+
+.hidden {
+    opacity: 0;
+}
