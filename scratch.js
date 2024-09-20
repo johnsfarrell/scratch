@@ -47,6 +47,11 @@ canvas.addEventListener('mousemove', (e) => {
 
     lastX = pos.x;
     lastY = pos.y;
+
+    particleSpray(
+        e.clientX,
+        e.clientY
+    );
 });
 
 canvas.addEventListener('mouseup', (_) => isDrawing = false);
@@ -77,6 +82,32 @@ canvas.addEventListener('touchmove', (e) => {
 
     lastX = pos.x;
     lastY = pos.y;
+
+    particleSpray(
+        e.touches[0].clientX,
+        e.touches[0].clientY
+    );
 });
 
 canvas.addEventListener('touchend', (_) => isDrawing = false);
+
+const relSize = 10;
+
+const particleSpray = (x,y) => {
+    var elem = document.createElement('div');
+    var size = Math.ceil(Math.random() * relSize) + 'px';
+    elem.style.position = 'fixed';
+    elem.style.left = x + 'px';
+    elem.style.top = y + 'px';
+    elem.style.width = size;
+    elem.style.height = size;
+    elem.style.borderRadius = size;
+    elem.style.animation = "fallingsparkles 1s";
+    elem.style.background = 'hsla(' + Math.round(Math.random() * 160) + ', 60%, 90%, 0.5)';
+    elem.style.pointerEvents = 'none';
+    document.body.appendChild(elem);
+    
+    window.setTimeout(function () {
+        document.body.removeChild(elem);
+    }, Math.round(Math.random() * 1000));
+}
