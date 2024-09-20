@@ -95,9 +95,9 @@ const particleSpray = (x,y) => {
     elem.style.top = y + Math.round((Math.random()-0.5)*20) + 'px';
     elem.style.width = size;
     elem.style.height = size;
-    elem.style.borderRadius = size;
+    elem.style.filter = 'blur(0.5px)';
     elem.style.animation = "fallingsparkles 0.25s forwards";
-    elem.style.background = `hsla(150, 100%, ${Math.round(Math.random()*100)}%, 0.5)`;
+    elem.style.background = `hsla(150, 100%, ${Math.round(Math.random()*100)}%, 0.75)`;
     elem.style.pointerEvents = 'none';
     document.body.appendChild(elem);
     
